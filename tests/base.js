@@ -1,16 +1,15 @@
+// fixtures/base.js
 const { test: base } = require('@playwright/test');
 const { HomePage } = require('../pages/HomePage');
 
 exports.test = base.extend({
-    homePage: async ({ page }, use) => {
-        // Set up the fixture
-        const homePage = new HomePage(page);
+  homePage: async ({ page }, use) => {
+    // Create HomePage instance
+    const homePage = new HomePage(page);
 
-        // Use the fixture value in the test
-        await use(homePage);
-
-        // Clean up code could go here if needed
-    },
+    // Provide it to the test
+    await use(homePage);
+  },
 });
 
 exports.expect = base.expect;

@@ -33,6 +33,9 @@ export default defineConfig({
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
+
+    /* Added headed mode */
+    headless: false,
   },
 
   /* Configure projects for major browsers */
@@ -80,4 +83,3 @@ export default defineConfig({
   //   reuseExistingServer: !process.env.CI,
   // },
 });
-

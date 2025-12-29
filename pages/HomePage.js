@@ -1,19 +1,13 @@
-const { expect } = require('@playwright/test');
+// pages/HomePage.js
+class HomePage {
+  constructor(page) {
+    this.page = page;
+  }
 
-exports.HomePage = class HomePage {
+  // Navigate to ParaBank homepage
+  async goto() {
+    await this.page.goto('https://parabank.parasoft.com/parabank/index.htm');
+  }
+}
 
-    constructor(page) {
-        this.page = page;
-        this.getStartedLink = page.locator('a', { hasText: 'Get started' });
-        this.gettingStartedHeader = page.locator('h1', { hasText: 'Installation' });
-    }
-
-    async goto() {
-        await this.page.goto('/');
-    }
-
-    async getStarted() {
-        await this.getStartedLink.first().click();
-        await this.gettingStartedHeader.waitFor();
-    }
-};
+module.exports = { HomePage };
