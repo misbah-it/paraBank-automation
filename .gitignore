@@ -6,3 +6,30 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+# Node modules
+node_modules/
+
+# Playwright reports
+playwright-report/
+test-results/
+
+# Logs
+*.log
+
+# Env files
+.env
+
+# npm
+package-lock.json
+
+# Mac/Windows system files
+.DS_Store
+Thumbs.db
+echo "node_modules/
+playwright-report/
+test-results/
+*.log
+.env
+.DS_Store
+Thumbs.db
+package-lock.json" > .gitignore
